@@ -1429,7 +1429,7 @@ void FITSDataset::LoadFITSInfo()
 
                 /* NOTA BENE: FITS standard define pixel integers at the center of the pixel,
                    0.5 must be subtract to have UpperLeft corner */
-                adfGeoTransform[0] = crval1 * radfac - adfGeoTransform[1] * crpix1;
+                adfGeoTransform[0] = crval1 * radfac - adfGeoTransform[1] * (crpix1 - 0.5) - adfGeoTransform[2] * (crpix2 - 0.5);
 				 
 		std::cout << "crval1=" << crval1 << " radfac=" << radfac << " geo1=" << adfGeoTransform[1] << std::endl;
 		
@@ -1439,7 +1439,7 @@ void FITSDataset::LoadFITSInfo()
                 //adfGeoTransform[3] = - adfGeoTransform[5] * (crpix2-0.5);
                                                          //+ crval2 * radfac;
 		// modified by JC : need to check
-		adfGeoTransform[3] = crval2 * radfac - adfGeoTransform[5] * crpix2 ;
+		adfGeoTransform[3] = crval2 * radfac - adfGeoTransform[4] * (crpix1 - 0.5) - adfGeoTransform[5] * (crpix2 - 0.5) ;
 		std::cout << "GT0=" << adfGeoTransform[0] << " GT1=" << adfGeoTransform[3] << std::endl;
                 bGeoTransformValid = true;
             }
