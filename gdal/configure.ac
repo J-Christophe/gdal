@@ -1689,7 +1689,7 @@ elif test "$with_cfitsio" = "yes" -o "$with_cfitsio" = "" ; then
   AC_CHECK_LIB(cfitsio,ffopen,FITS_SETTING=external,FITS_SETTING=no,)
 
   if test "$FITS_SETTING" = "external" ; then
-    LIBS="-lcfitsio $LIBS"
+    LIBS="-lcfitsio -lwcs $LIBS"
     echo "using pre-installed libcfitsio."
   else
     echo "libcfitsio not found - FITS support disabled"
@@ -1697,14 +1697,14 @@ elif test "$with_cfitsio" = "yes" -o "$with_cfitsio" = "" ; then
 
 dnl Fedora has cfitsio headers in /usr/include/cfitsio
   if test "$FITS_SETTING" = "external" -a -d /usr/include/cfitsio ; then
-    EXTRA_INCLUDES="-I/usr/include/cfitsio $EXTRA_INCLUDES"
+    EXTRA_INCLUDES="-I/usr/include/cfitsio -I/usr/include/wcslib-6.2 $EXTRA_INCLUDES"
   fi
 
 else
 
   FITS_SETTING=external
-  LIBS="-L$with_cfitsio -L$with_cfitsio/lib -lcfitsio $LIBS"
-  EXTRA_INCLUDES="-I$with_cfitsio -I$with_cfitsio/include $EXTRA_INCLUDES"
+  LIBS="-L$with_cfitsio -L$with_cfitsio/lib -lcfitsio -lwcs $LIBS"
+  EXTRA_INCLUDES="-I$with_cfitsio -I$with_cfitsio/include -I/usr/include/wcslib-6.2 $EXTRA_INCLUDES"
 
   echo "using libcfitsio from $with_cfitsio."
 fi
