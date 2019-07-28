@@ -31,7 +31,7 @@ RUN apt-get update -y \
        libfreexl-dev unixodbc-dev libwebp-dev libepsilon-dev \
        liblcms2-2 libpcre3-dev libcrypto++-dev libdap-dev libfyba-dev \
        libkml-dev libmysqlclient-dev libogdi3.2-dev \
-       libcfitsio-dev openjdk-8-jdk libzstd1-dev \
+       libcfitsio-dev wcslib-dev openjdk-8-jdk libzstd1-dev \
        libpq-dev libssl-dev libboost-dev \
        autoconf automake bash-completion libarmadillo-dev
 
