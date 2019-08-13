@@ -1690,6 +1690,7 @@ elif test "$with_cfitsio" = "yes" -o "$with_cfitsio" = "" ; then
 
   if test "$FITS_SETTING" = "external" ; then
     LIBS="-lcfitsio -lwcs $LIBS"
+    EXTRA_INCLUDES="-I/usr/include/wcslib-6.2 $EXTRA_INCLUDES"
     echo "using pre-installed libcfitsio."
   else
     echo "libcfitsio not found - FITS support disabled"
