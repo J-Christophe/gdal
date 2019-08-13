@@ -1,7 +1,7 @@
 
 include ../../GDALmake.opt
 
-OBJ	=	fitsdataset.o
+OBJ	=	fitsdataset.o crs.o fitsWrapper.o constants.o
 
 FITS_OPTS	=
 

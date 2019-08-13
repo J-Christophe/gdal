@@ -1,5 +1,5 @@
 
-OBJ		=	fitsdataset.obj
+OBJ		=	fitsdataset.obj crs.obj fitsWrapper.obj constants.obj
 
 PLUGIN_DLL 	=	gdal_FITS.dll
 
