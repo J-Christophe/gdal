@@ -42,7 +42,7 @@ const std::string GlobalConstants::WCS_ARCMIN = "arcmin";
 const std::string GlobalConstants::WCS_ARCSEC = "arcsec";
 const std::string GlobalConstants::WCS_MAS = "mas";
 
-const std::string GlobalConstants::WKT_METER = "meter";
+const std::string GlobalConstants::WKT_METER = "metre";
 const std::string GlobalConstants::WKT_DEGREE = "degree";
 
 const std::string GlobalConstants::WCS_CTYPE = "CTYPE";
